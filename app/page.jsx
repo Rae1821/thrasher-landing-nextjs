@@ -1,15 +1,14 @@
+import Events from "@/components/shared/Events"
 import Header from "@/components/shared/Header"
 import Hero from "@/components/shared/Hero"
-import { Separator } from "@/components/ui/separator"
-import Image from "next/image"
+
 
 const page = () => {
   return (
     <div>
         <Header />
-
-
         <Hero />
+        <Events />
 
 
 

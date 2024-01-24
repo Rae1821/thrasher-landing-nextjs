@@ -75,12 +75,27 @@
   }
 }
 
-html {
+.dark {
+  color: #091D29;
+}
+
+.accent {
+  color: #74A4A2;
+}
+
+.teal {
+  color: #45848F;
+}
+
+.yellow {
+  color: #EEEAD3;
+}
+
+.montFont {
   font-family: var(--font-mont);
 }
 
-
-.playfair {
+.playfairFont {
   font-family: var(--font-playfair-display);
 }
 

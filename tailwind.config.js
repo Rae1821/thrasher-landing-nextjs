@@ -11,6 +11,10 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+    fontFamily: {
+      'display': 'Playfair\\Display, serif',
+      'body': 'Poppins, sans-serif',
+    },
     container: {
       center: true,
       padding: "2rem",

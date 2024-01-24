@@ -8,12 +8,10 @@ export const mont = Montserrat({
   variable: '--font-mont'
 });
 
- export const playfair_display = Playfair_Display({
+ export const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "900"],
-  style: ["normal"],
-  display: 'swap',
-  variable: '--font-playfair-display'
+  variable: '--font-playfairDisplay'
 })
 
 export const metadata = {
@@ -23,7 +21,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${mont.variable} ${playfair_display.variable}`}>
+    <html lang="en">
       <body>{children}</body>
     </html>
   );

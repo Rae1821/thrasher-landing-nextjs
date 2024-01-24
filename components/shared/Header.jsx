@@ -17,7 +17,7 @@ const Header = () => {
                 />
                 </div>
                <div>
-                <p className="playfair text-xs tracking-wide font-semibold ml-1">Thrasher <span className="block -mt-1 font-semibold">Landing</span></p>
+                <p className="playfairFont text-xs tracking-wide font-semibold ml-1">Thrasher <span className="block -mt-1 font-semibold">Landing</span></p>
                </div>
 
 

@@ -1,15 +1,15 @@
-import React from 'react'
+
 
 
 const Navbar = () => {
   return (
     <nav>
         <ul className="md:flex-between flex w-full flex-col items-start gap-5 md:flex-row cursor-pointer text-xs tracking-wider uppercase">
-            <li>Home</li>
-            <li>Events</li>
-            <li>Documents</li>
-            <li>About</li>
-            <li>Newsletter</li>
+            <li className="montFont">Home</li>
+            <li className="montFont">Events</li>
+            <li className="montFont">Documents</li>
+            <li className="montFont">About</li>
+            <li className="montFont">Newsletter</li>
         </ul>
     </nav>
   )
