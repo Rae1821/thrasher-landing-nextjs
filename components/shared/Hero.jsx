@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { oswald } from "@/lib/fonts"
 
 
 const Hero = () => {
@@ -7,7 +8,7 @@ const Hero = () => {
 
     <section className="h-[700px] relative flex flex-col justify-center items-center bg-stone-900 bg-[url('/images/unsplash-bg.jpg')] bg-cover bg-center bg-blend-overlay">
         <div className="flex flex-col justify-center items-center">
-            <h1 className="playfairFont text-stone-50 text-4xl md:text-5xl lg:text-6xl tracking-widest mb-4">Thrasher Landing</h1>
+            <h1 className="text-stone-50 text-4xl md:text-5xl lg:text-6xl tracking-widest mb-4">Thrasher Landing</h1>
 
                 <div className="underline bg-stone-100 mx-auto"></div>
 

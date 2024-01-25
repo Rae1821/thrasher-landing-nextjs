@@ -11,10 +11,6 @@ module.exports = {
   ],
   prefix: "",
   theme: {
-    fontFamily: {
-      'display': 'Playfair\\Display, serif',
-      'body': 'Poppins, sans-serif',
-    },
     container: {
       center: true,
       padding: "2rem",
@@ -57,10 +53,6 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-      },
-      fontFamily: {
-        mont: ["var(--font-mont)"],
-        playfair: ["var(--playfair)"],
       },
       borderRadius: {
         lg: "var(--radius)",

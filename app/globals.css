@@ -91,13 +91,6 @@
   color: #EEEAD3;
 }
 
-.montFont {
-  font-family: var(--font-mont);
-}
-
-.playfairFont {
-  font-family: var(--font-playfair-display);
-}
 
 .hero--container {
   position: relative;
