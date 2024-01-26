@@ -6,7 +6,7 @@ import Navbar from './Navbar';
 
 const Header = () => {
   return (
-    <header className="flex justify-between items-center px-4 py-2 shadow-xl shadow-slate-300 max-w-6xl mx-auto">
+    <header className="flex justify-between items-center px-4 py-2 max-w-6xl mx-auto">
         <div className="flex items-end">
                 <div>
                 <Image
@@ -17,7 +17,7 @@ const Header = () => {
                 />
                 </div>
                <div>
-                <p className="playfairFont text-xs tracking-wide font-semibold ml-1">Thrasher <span className="block -mt-1 font-semibold">Landing</span></p>
+                <p className="font-sans text-xs tracking-wide font-semibold ml-1">Thrasher <span className="block -mt-1 font-semibold">Landing</span></p>
                </div>
 
 

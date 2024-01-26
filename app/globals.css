@@ -112,11 +112,20 @@
 
 .underline {
   margin-top: .5em;
-  height: 2px;
-  width: 200px;
+  height: 3px;
   position: relative;
-  -webkit-animation: scale-in-hor-left 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s both;
-  animation: scale-in-hor-left 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s both;
+}
+
+.lineAnimation {
+  -webkit-animation: scale-in-hor-left 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s both;
+  animation: scale-in-hor-left 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s both;
+}
+
+.verticalLine {
+  margin-top: .5em;
+  height: 150px;
+  width: 4px;
+  position: absolute;
 }
 
 

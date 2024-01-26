@@ -25,18 +25,23 @@ const MobileNav = () => {
                 />
             </SheetTrigger>
             <SheetContent className="flex flex-col gap-6 bg-white md:hidden">
-                <Image
-                    src="/icons/logo.svg"
-                    alt="logo"
-                    width={32}
-                    height={32}
-                />
+                <div className="flex items-end">
+                    <Image
+                        src="/icons/logo.svg"
+                        alt="logo"
+                        width={32}
+                        height={32}
+                    />
+                    <p className="font-sans text-xs tracking-wide font-semibold ml-1">Thrasher <span className="block -mt-1 font-semibold">Landing</span></p>
+                </div>
+
+
                 <Separator className="border border-gray-50" />
-                <Link href="/">Home</Link>
-                <Link href="/">Events</Link>
-                <Link href="/">Documents</Link>
-                <Link href="/">About</Link>
-                <Link href="/">Newsletter</Link>
+                <Link href="/" className="cursor-pointer hover:text-cyan-600">Home</Link>
+                <Link href="/" className="cursor-pointer hover:text-cyan-600">Events</Link>
+                <Link href="/" className="cursor-pointer hover:text-cyan-600">Documents</Link>
+                <Link href="/" className="cursor-pointer hover:text-cyan-600">About</Link>
+                <Link href="/" className="cursor-pointer hover:text-cyan-600">Newsletter</Link>
             </SheetContent>
         </Sheet>
     </div>

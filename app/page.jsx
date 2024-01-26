@@ -1,6 +1,8 @@
+import Documents from "@/components/shared/Documents"
 import Events from "@/components/shared/Events"
 import Header from "@/components/shared/Header"
 import Hero from "@/components/shared/Hero"
+import Members from "@/components/shared/Members"
 
 
 const page = () => {
@@ -8,8 +10,11 @@ const page = () => {
     <div>
         <Header />
         <Hero />
-        <Events />
 
+
+        <Events />
+        <Documents />
+        <Members  />
 
 
 

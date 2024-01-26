@@ -19,6 +19,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['var(--font-montserrat)'],
+        playfair: ['var(--font-playfair_display)'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

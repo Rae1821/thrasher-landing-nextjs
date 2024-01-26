@@ -1,5 +1,5 @@
 import "./globals.css";
-import { montserrat } from "@/lib/fonts";
+import { montserrat, playfair_display } from "@/lib/fonts";
 
 
 
@@ -10,8 +10,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={montserrat.className}>
-      <body>{children}</body>
+    <html lang="en" className={`${montserrat.variable} ${playfair_display.variable}`}>
+      <body className="text-stone-950">{children}</body>
     </html>
   );
 }
