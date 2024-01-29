@@ -1,4 +1,4 @@
-import Documents from "@/components/shared/Documents"
+import DocumentSection from "@/components/shared/DocumentSection"
 import Events from "@/components/shared/Events"
 import Header from "@/components/shared/Header"
 import Hero from "@/components/shared/Hero"
@@ -12,9 +12,9 @@ const page = () => {
         <Hero />
 
 
-        <Events />
-        <Documents />
-        <Members  />
+        <Events id="events"/>
+        <DocumentSection id="documents"/>
+        <Members id="about"  />
 
 
 

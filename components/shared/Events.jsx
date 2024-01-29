@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 const Events = () => {
   return (
-    <div className="bg-cyan-600 z-0 pt-16">
-<div className="h-[2px] w-24 bg-stone-600 mx-auto"></div>
-      <div className="flex flex-col items-center justify-center gap-4 mx-auto">
+    <div className="py-32 px-24 z-0" id="events">
+{/* <div className="h-[2px] w-24 bg-stone-600 mx-auto"></div> */}
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-4 mx-auto max-w-6xl">
 
         {/* left side */ }
         <div className="mx-auto mb-20">
@@ -28,18 +28,27 @@ const Events = () => {
 
         </div>
         {/* right side */ }
-        <div className="h-[400px]">
-          <div className="h-[300px] mt-24 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 grid-rows-3 gap-4">
-            <Image
-                  src="/images/house.jpg"
-                  alt="house 1"
-                  height={1000}
-                  width={1000}
-                  className="w-full shadow-lg rounded col-span-1 row-span-1 lg:col-start-2 lg:col-span-2"
-                />
 
-            </div>
-        </div>
+          {/* <div className="before:absolute before:-top-[4px] before:-right-[4px] before:-left-[4px] before:z-0 before:opacity-0 before:border-sm relative shadow-none inline-block z-100 rounded-sm cursor-pointer  mb-2 bg-none">
+
+              <Image
+                src="/images/house.jpg"
+                alt="house 1"
+                height={500}
+                width={500}
+                className="rounded-sm w-5/6 my-0 mx-auto border-2 p-0 overflow-hidden h-full transition-shadow duration-200 ease-linear shadow-xl shadow-cyan-600 relative"
+              />
+          </div> */}
+          <div className="relative">
+            <span className="block absolute h-[225px] w-[300px] md:h-[350px] md:w-[450px] bg-[#778e52] -right-6 -top-6 rounded shadow"></span>
+            <Image
+                src="/images/crowd.jpg"
+                alt="house 1"
+                height={500}
+                width={500}
+                className="rounded-sm my-0 mx-auto  p-0 overflow-hidden h-full w-full transition-shadow duration-200 ease-linear shadow-xl relative"
+              />
+          </div>
       </div>
     </div>
   )
