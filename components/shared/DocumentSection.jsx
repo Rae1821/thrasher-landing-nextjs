@@ -30,7 +30,7 @@ const DocumentSection = () => {
             <div className="w-full">
                 <h2 className="font-playfair text-stone-100 text-4xl md:text-5xl text-center mb-4 font-bold">HOA Documents</h2>
                 <div className="underline w-[200px] bg-cyan-600 mx-auto"></div>
-                <p className="font-sans text-stone-100 text-center mb-8 mt-4 tracking-wide max-w-sm mx-auto">Enter your password below to access the documents page</p>
+                <p className="font-sans text-stone-100 text-center mb-8 mt-4 tracking-wide max-w-sm lg:max-w-lg mx-auto">Enter your password below to access the documents page</p>
             </div>
             <div>
             <form onSubmit={handleSubmit} className="flex justify-center items-center w-3/4 md:w-1/2 lg:w-72 mx-auto">

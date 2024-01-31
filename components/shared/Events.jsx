@@ -40,7 +40,7 @@ const Events = () => {
               />
           </div> */}
           <div className="relative">
-            <span className="block absolute h-[225px] w-[300px] md:h-[350px] md:w-[450px] bg-[#778e52] -right-6 -top-6 rounded shadow"></span>
+            <span className="block absolute h-[225px] w-[300px] md:h-[350px] md:w-[450px] bg-slate-800 -right-6 -top-6 rounded shadow"></span>
             <Image
                 src="/images/crowd.jpg"
                 alt="house 1"

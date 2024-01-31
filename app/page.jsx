@@ -1,5 +1,6 @@
 import DocumentSection from "@/components/shared/DocumentSection"
 import Events from "@/components/shared/Events"
+import Footer from "@/components/shared/Footer"
 import Header from "@/components/shared/Header"
 import Hero from "@/components/shared/Hero"
 import Members from "@/components/shared/Members"
@@ -14,9 +15,8 @@ const page = () => {
 
         <Events id="events"/>
         <DocumentSection id="documents"/>
-        <Members id="about"  />
-
-
+        {/* <Members id="about"  /> */}
+        <Footer />
 
 {/*
           <section className="bg-white h-32">
