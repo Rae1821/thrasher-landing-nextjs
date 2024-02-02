@@ -1,15 +1,16 @@
 import Image from 'next/image';
 
 
+
+
 const Events = () => {
   return (
-    <div className="py-32 px-24 z-0" id="events">
-{/* <div className="h-[2px] w-24 bg-stone-600 mx-auto"></div> */}
+    <div className="magicPattern bg-opacity-20 py-32 px-24 z-0" id="events">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-4 mx-auto max-w-6xl">
 
         {/* left side */ }
         <div className="mx-auto mb-20">
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 mt-12">Upcoming Events</h2>
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 mt-12 text-slate-900">Upcoming Events</h2>
             <div className="flex items-start gap-2">
               <div className="h-10 w-[3px] bg-cyan-700"></div>
               <p className="leading-2 text-sm w-[350px]">Here you'll find information on any upcoming community get togethers.</p>
@@ -29,17 +30,8 @@ const Events = () => {
         </div>
         {/* right side */ }
 
-          {/* <div className="before:absolute before:-top-[4px] before:-right-[4px] before:-left-[4px] before:z-0 before:opacity-0 before:border-sm relative shadow-none inline-block z-100 rounded-sm cursor-pointer  mb-2 bg-none">
 
-              <Image
-                src="/images/house.jpg"
-                alt="house 1"
-                height={500}
-                width={500}
-                className="rounded-sm w-5/6 my-0 mx-auto border-2 p-0 overflow-hidden h-full transition-shadow duration-200 ease-linear shadow-xl shadow-cyan-600 relative"
-              />
-          </div> */}
-          <div className="relative">
+          {/* <div className="relative">
             <span className="block absolute h-[225px] w-[300px] md:h-[350px] md:w-[450px] bg-slate-800 -right-6 -top-6 rounded shadow"></span>
             <Image
                 src="/images/crowd.jpg"
@@ -48,7 +40,7 @@ const Events = () => {
                 width={500}
                 className="rounded-sm my-0 mx-auto  p-0 overflow-hidden h-full w-full transition-shadow duration-200 ease-linear shadow-xl relative"
               />
-          </div>
+          </div> */}
       </div>
     </div>
   )

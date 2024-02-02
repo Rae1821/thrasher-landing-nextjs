@@ -15,7 +15,7 @@ const page = () => {
 
         <Events id="events"/>
         <DocumentSection id="documents"/>
-        {/* <Members id="about"  /> */}
+        <Members id="about"  />
         <Footer />
 
 {/*
