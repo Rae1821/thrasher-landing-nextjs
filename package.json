@@ -15,8 +15,13 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cookie": "^0.6.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-tailwindcss": "^3.15.1",
     "lucide-react": "^0.314.0",
     "next": "14.1.0",
+    "next-auth": "^4.24.7",
+    "prettier": "^3.2.5",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.2.1",
@@ -24,7 +29,16 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.2",
     "postcss": "^8",
     "tailwindcss": "^3.3.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "next",
+      "plugin:tailwindcss/recommended",
+      "prettier"
+    ]
   }
 }

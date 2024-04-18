@@ -1,37 +1,55 @@
-import Image from 'next/image';
-
-
-
+import Image from "next/image";
 
 const Events = () => {
   return (
-    <div className="magicPattern bg-opacity-20 py-32 px-24 z-0" id="events">
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-4 mx-auto max-w-6xl">
-
-        {/* left side */ }
+    // eslint-disable-next-line tailwindcss/migration-from-tailwind-2
+    <div id="events" className="magicPattern z-0 bg-opacity-20 px-24 py-32">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 lg:flex-row">
+        {/* left side */}
         <div className="mx-auto mb-20">
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 mt-12 text-slate-900">Upcoming Events</h2>
-            <div className="flex items-start gap-2">
-              <div className="h-10 w-[3px] bg-cyan-700"></div>
-              <p className="leading-2 text-sm w-[350px]">Here you'll find information on any upcoming community get togethers.</p>
-            </div>
+          <h2 className="mb-6 mt-12 font-playfair text-4xl font-bold text-slate-900 md:text-5xl">
+            Upcoming Events
+          </h2>
+          <div className="flex items-start gap-2">
+            <div className="h-10 w-[3px] bg-cyan-700"></div>
+            <p className="w-[350px] text-sm leading-relaxed">
+              Here you&apos;ll find information on any upcoming community get
+              togethers.
+            </p>
+          </div>
 
-            <div className="mt-12 flex items-center gap-2 rounded-lg shadow bg-white max-w-md">
-                <p className="flex flex-col items-center bg-cyan-600  w-12 p-4 rounded-tl-md rounded-bl-md text-slate-50 text-sm">APR <span className="font-semibold">14</span></p>
-                <div className="leading-2">
-                    <h3 className="font-semibold">HOA Meeting</h3>
-                    <p className="font-light text-sm">Location TBD | 6pm</p>
-                </div>
-            </div>
-            <div>
+          <div className="mt-12 flex h-[100px] w-[350px] items-center gap-2 rounded-lg bg-white shadow">
+            <p className="relative flex h-full w-12 flex-col items-center rounded-l-md bg-cyan-600 p-4 text-sm font-semibold text-slate-50">
+              APR <span>14</span>
+              <span className="mt-2 text-xs font-light">2024</span>
+            </p>
 
+            <div className="ml-4 leading-relaxed">
+              <h3 className="mb-2 text-xl font-semibold">HOA Meeting</h3>
+              <p className="mb-2 flex gap-1 text-sm">
+                <Image
+                  src="/icons/map-pin.svg"
+                  width={16}
+                  height={16}
+                  alt="map icon"
+                />
+                Location TBD
+              </p>
+              <p className="flex gap-1 text-sm">
+                <Image
+                  src="/icons/clock.svg"
+                  height={16}
+                  width={16}
+                  alt="time of event"
+                />
+                6pm
+              </p>
             </div>
-
+          </div>
         </div>
-        {/* right side */ }
+        {/* right side */}
 
-
-          {/* <div className="relative">
+        {/* <div className="relative">
             <span className="block absolute h-[225px] w-[300px] md:h-[350px] md:w-[450px] bg-slate-800 -right-6 -top-6 rounded shadow"></span>
             <Image
                 src="/images/crowd.jpg"
@@ -43,7 +61,7 @@ const Events = () => {
           </div> */}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Events
+export default Events;

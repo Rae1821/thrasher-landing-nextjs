@@ -42,6 +42,7 @@ const MobileNav = () => {
                 <Link href="/" className="cursor-pointer hover:text-cyan-600">Documents</Link>
                 <Link href="/" className="cursor-pointer hover:text-cyan-600">About</Link>
                 <Link href="/" className="cursor-pointer hover:text-cyan-600">Newsletter</Link>
+                <Link href="/account" className="cursor-pointer hover:text-cyan-600">My Account</Link>
             </SheetContent>
         </Sheet>
     </div>
