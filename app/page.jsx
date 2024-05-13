@@ -1,24 +1,21 @@
-import DocumentSection from "@/components/shared/DocumentSection"
-import Events from "@/components/shared/Events"
-import Footer from "@/components/shared/Footer"
-import Header from "@/components/shared/Header"
-import Hero from "@/components/shared/Hero"
-import Members from "@/components/shared/Members"
-
+import DocumentSection from "@/components/shared/DocumentSection";
+import Events from "@/components/shared/Events";
+import Footer from "@/components/shared/Footer";
+import Header from "@/components/shared/Header";
+import Hero from "@/components/shared/Hero";
+import Members from "@/components/shared/Members";
 
 const page = () => {
   return (
     <div>
-        <Header />
-        <Hero />
+      <Header />
+      <Hero />
+      <Events id="events" />
+      <DocumentSection id="documents" />
+      <Members id="about" />
+      <Footer />
 
-
-        <Events id="events"/>
-        <DocumentSection id="documents"/>
-        <Members id="about"  />
-        <Footer />
-
-{/*
+      {/*
           <section className="bg-white h-32">
             <div className="absolute -right-32 bottom-0">
                 <Image
@@ -40,7 +37,7 @@ const page = () => {
               </div>
           </section> */}
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

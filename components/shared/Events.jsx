@@ -3,7 +3,7 @@ import Image from "next/image";
 const Events = () => {
   return (
     // eslint-disable-next-line tailwindcss/migration-from-tailwind-2
-    <div id="events" className="magicPattern z-0 bg-opacity-20 px-24 py-32">
+    <div id="events" className="z-0 bg-opacity-20 px-24 py-32">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 lg:flex-row">
         {/* left side */}
         <div className="mx-auto mb-20">
@@ -49,16 +49,16 @@ const Events = () => {
         </div>
         {/* right side */}
 
-        {/* <div className="relative">
-            <span className="block absolute h-[225px] w-[300px] md:h-[350px] md:w-[450px] bg-slate-800 -right-6 -top-6 rounded shadow"></span>
-            <Image
-                src="/images/crowd.jpg"
-                alt="house 1"
-                height={500}
-                width={500}
-                className="rounded-sm my-0 mx-auto  p-0 overflow-hidden h-full w-full transition-shadow duration-200 ease-linear shadow-xl relative"
-              />
-          </div> */}
+        <div className="relative">
+          <span className="absolute -right-6 -top-6 block h-[225px] w-[300px] rounded bg-slate-800 shadow md:h-[350px] md:w-[450px]"></span>
+          <Image
+            src="/images/crowd.jpg"
+            alt="house 1"
+            height={500}
+            width={500}
+            className="relative mx-auto my-0  size-full overflow-hidden rounded-sm p-0 shadow-xl transition-shadow duration-200 ease-linear"
+          />
+        </div>
       </div>
     </div>
   );
