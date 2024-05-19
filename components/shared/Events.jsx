@@ -2,8 +2,7 @@ import Image from "next/image";
 
 const Events = () => {
   return (
-    // eslint-disable-next-line tailwindcss/migration-from-tailwind-2
-    <div id="events" className="z-0 bg-opacity-20 px-24 py-32">
+    <div id="events" className="z-0 px-24 py-32">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 lg:flex-row">
         {/* left side */}
         <div className="mx-auto mb-20">
