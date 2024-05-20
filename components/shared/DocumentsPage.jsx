@@ -19,14 +19,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import HOADocuments from "./HOADocuments";
+import Link from "next/link";
 
 const DocumentsPage = () => {
   return (
     <div>
       <Header />
       {/* hero section */}
-      <main className="min-h-screen">
-        <div className="relative z-0 flex h-[200px] flex-col items-center justify-center bg-stone-800 bg-[url('/images/unsplash-bg.jpg')] bg-cover bg-center bg-blend-overlay">
+      <main className="min-h-screen w-full">
+        <div className="z-0 flex h-[200px] flex-col items-center justify-center bg-stone-800 bg-[url('/images/unsplash-bg.jpg')] bg-cover bg-center bg-blend-overlay">
           <h1 className="z-10 font-playfair text-3xl font-black text-slate-50">
             HOA Documents
           </h1>
@@ -34,22 +36,23 @@ const DocumentsPage = () => {
             Click on each link below to view, print, or download the documents.
           </p>
         </div>
-
-        <div className="">
-          <div className="absolute left-0 right-[1200px] top-[53%] block h-screen w-screen translate-x-[30%] skew-y-[-30deg] overflow-hidden bg-emerald-700"></div>
+        {/* bg-[#A67A44]/20 */}
+        <div className="relative h-[900px] overflow-hidden ">
+          <div className="absolute bottom-0 top-[53%] block h-[800px] w-full translate-x-0 skew-y-[-30deg] overflow-hidden bg-emerald-700"></div>
+          <div className="absolute bottom-0 top-[53%] block h-[800px] w-full translate-x-0 skew-y-[30deg] overflow-hidden bg-emerald-700"></div>
           <div className="relative">
             {/* main documents section */}
-            <div className="flex flex-col items-center justify-center gap-8 bg-[#A67A44]/20 py-24 before:content-['']">
+            <div className="flex flex-col items-center justify-center gap-8 py-24">
               <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
                 {/* covenant */}
-                <div className="relative h-56 overflow-hidden rounded-xl border bg-white px-4 py-8 text-center shadow-lg md:w-72">
-                  <div className="absolute -left-10 top-2">
+                <div className="relative h-64 w-[350px] overflow-hidden rounded-xl border bg-white px-4 py-8 text-center shadow-lg md:w-72">
+                  <div className="mb-4 inline-flex size-16 shrink-0 items-center justify-center rounded-full bg-gray-100 sm:mb-0 sm:mr-6">
                     <Image
                       src="/icons/document.svg"
                       alt="document"
-                      height={250}
-                      width={200}
-                      className="mx-auto mb-4 opacity-60"
+                      height={32}
+                      width={32}
+                      className=""
                     />
                   </div>
                   <div className="relative">
@@ -59,20 +62,34 @@ const DocumentsPage = () => {
                     <p className="mb-6 mt-2 w-64 text-sm">
                       Rules & regulations for Thrasher Landing
                     </p>
-                    <button className="border-2 border-black bg-white px-8 py-0.5 text-xs uppercase text-neutral-700 shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] transition duration-200 dark:border-white dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)]">
-                      View document
-                    </button>
+                    <Link
+                      href="/"
+                      className="mt-3 inline-flex items-center text-emerald-700"
+                    >
+                      View Document
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        class="ml-2 size-4"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                      </svg>
+                    </Link>
                   </div>
                 </div>
                 {/* covenant amendment */}
-                <div className="h-56 w-72 rounded-xl border bg-white px-4 py-8 text-center shadow-lg">
-                  <div className="mx-auto mb-2 w-10 rounded-full bg-emerald-600 p-2 shadow-lg">
+                <div className="h-64 w-72 rounded-xl border bg-white px-4 py-8 text-center shadow-lg">
+                  <div className="mb-4 inline-flex size-16 shrink-0 items-center justify-center rounded-full bg-gray-100 sm:mb-0 sm:mr-6">
                     <Image
                       src="/icons/document.svg"
                       alt="document"
                       height={32}
                       width={32}
-                      className="mx-auto mb-4"
+                      className=""
                     />
                   </div>
 
@@ -82,35 +99,70 @@ const DocumentsPage = () => {
                   <p className="mb-6 mt-2 w-64 text-center text-sm">
                     Rules & regulations for Thrasher Landing
                   </p>
-                  <button className="border-2 border-black bg-white px-8 py-0.5 text-xs uppercase text-neutral-700 shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] transition duration-200 dark:border-white dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)]">
+                  <Link
+                    href="/"
+                    className="mt-3 inline-flex items-center text-emerald-700"
+                  >
                     View Document
-                  </button>
+                    <svg
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      class="ml-2 size-4"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                  </Link>
                 </div>
                 {/* bi-laws */}
-                <div className="h-56 w-72 rounded-xl border bg-white px-4 py-8 text-center shadow-lg">
-                  <Image
-                    src="/icons/document.svg"
-                    alt="document"
-                    height={32}
-                    width={32}
-                    className="mx-auto mb-4"
-                  />
-                  <h3 className="mt-2 text-center text-sm font-bold uppercase tracking-wider">
-                    The Bi-Laws
-                  </h3>
-                  <p className="mb-6 mt-2 w-64 text-center text-sm">
-                    Rules & regulations for Thrasher Landing
-                  </p>
-                  <button className="border-2 border-black  bg-white px-8 py-0.5 text-xs uppercase text-neutral-700 shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] transition duration-200 dark:border-white dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] ">
+                <div className="flex h-56 w-[350px] items-center justify-between rounded-xl border bg-white px-4 py-8 shadow-lg">
+                  <div className="mb-4 inline-flex size-16 shrink-0 items-center justify-center rounded-full bg-gray-100 sm:mb-0 sm:mr-6">
+                    <Image
+                      src="/icons/document.svg"
+                      alt="document"
+                      height={32}
+                      width={32}
+                      className=""
+                    />
+                  </div>
+                  <div className="ml-2 md:ml-0">
+                    <h3 className="mb-3 text-left text-lg font-semibold tracking-wider">
+                      The Bi-Laws
+                    </h3>
+                    <p className="mb-6 w-64 text-left text-sm text-gray-600">
+                      Rules & regulations for Thrasher Landing
+                    </p>
+                    <Link
+                      href="/"
+                      className="mt-3 inline-flex items-center text-emerald-700"
+                    >
+                      View Document
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        class="ml-2 size-4"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                      </svg>
+                    </Link>
+                  </div>
+
+                  {/* <button className="border-2 border-black  bg-white px-8 py-0.5 text-xs uppercase text-neutral-700 shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] transition duration-200 dark:border-white dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] ">
                     View Document
-                  </button>
+                  </button> */}
                 </div>
               </div>
-              <div className=""></div>
             </div>
 
-            <div className="relative min-h-screen  px-4">
-              <div className="mt-12">
+            <div className="relative min-h-screen px-4">
+              <div className="mt-24 ">
                 <Card>
                   <CardHeader className="px-7">
                     <CardTitle>HOA Meetings</CardTitle>
@@ -178,80 +230,6 @@ const DocumentsPage = () => {
                     </Table>
                   </CardContent>
                 </Card>
-              </div>
-            </div>
-
-            {/* meeting minutes section */}
-            <div className="mx-auto mt-12 w-full bg-emerald-600/10 p-2 md:w-[600px]">
-              <h3 className="mb-4 text-center font-sans text-xl font-semibold">
-                Latest Meeting Minutes
-              </h3>
-
-              <div className="flex items-center justify-between border-b border-slate-100 px-2 py-4">
-                <div className="flex items-center justify-start gap-2">
-                  <div className="rounded-full bg-slate-100 p-2 shadow">
-                    <Image
-                      src="/icons/link.svg"
-                      alt="icon"
-                      width={20}
-                      height={20}
-                      className="text-emerald-600"
-                    />
-                  </div>
-                  <p className="mt-2 text-left font-sans font-semibold">
-                    Jan 18, 2024{" "}
-                    <span className="block text-xs font-normal uppercase">
-                      Annual Meeting
-                    </span>
-                  </p>
-                </div>
-                <Button size="sm" className="bg-emerald-600">
-                  View
-                </Button>
-              </div>
-
-              <div className="flex items-center justify-between px-2 py-4">
-                <div className="flex items-center justify-start gap-2">
-                  <div className="rounded-full bg-slate-100 p-2 shadow">
-                    <Image
-                      src="/icons/link.svg"
-                      alt="icon"
-                      width={20}
-                      height={20}
-                    />
-                  </div>
-                  <p className="mt-2 text-left font-sans font-semibold">
-                    Nov 17, 2023{" "}
-                    <span className="block text-xs font-normal uppercase">
-                      Annual Meeting
-                    </span>
-                  </p>
-                </div>
-                <Button size="sm" className="bg-emerald-600">
-                  View
-                </Button>
-              </div>
-
-              <div className="flex items-center justify-between border-t px-2 py-4">
-                <div className="flex items-center justify-start gap-2">
-                  <div>
-                    <Image
-                      src="/icons/link.svg"
-                      alt="icon"
-                      width={20}
-                      height={20}
-                    />
-                  </div>
-                  <p className="mt-2 text-left font-sans font-semibold">
-                    Oct 21, 2022{" "}
-                    <span className="block text-xs font-normal uppercase">
-                      Annual Meeting
-                    </span>
-                  </p>
-                </div>
-                <Button size="sm" className="bg-emerald-600">
-                  View
-                </Button>
               </div>
             </div>
           </div>
