@@ -1,39 +1,45 @@
-
-import Image from 'next/image';
-import MobileNav from './MobileNav'
-import Navbar from './Navbar';
-
+import Image from "next/image";
+import MobileNav from "./MobileNav";
+import Navbar from "./Navbar";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="flex justify-between items-center px-4 py-2 max-w-6xl mx-auto">
-        <div className="flex items-end">
-                <div>
-                <Image
-                    src="/icons/logo.svg"
-                    alt="logo"
-                    width={30}
-                    height={30}
-                />
-                </div>
-               <div>
-                <p className="font-sans text-xs tracking-wide font-semibold ml-1">Thrasher <span className="block -mt-1 font-semibold">Landing</span></p>
-               </div>
-
-
+    <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2">
+      <div className="flex items-end">
+        <div>
+          <Image src="/icons/logo.svg" alt="logo" width={30} height={30} />
         </div>
+        <div>
+          <p className="ml-1 font-sans text-xs font-semibold tracking-wide">
+            Thrasher <span className="-mt-1 block font-semibold">Landing</span>
+          </p>
+        </div>
+      </div>
+      <SignedIn>
         <div className="hidden md:flex">
-            <Navbar />
+          <Navbar />
         </div>
+      </SignedIn>
+      <SignedIn>
+        <UserButton afterSignOutUrl="/" />
         <MobileNav />
+      </SignedIn>
+      <SignedOut>
+        <Button asChild className="rounded-full" size="lg">
+          <Link href="/sign-in">Login</Link>
+        </Button>
+      </SignedOut>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
 
-
-{/* <header class="header">
+{
+  /* <header class="header">
             <div class="logo">
                 <a href="index.html" alt="home link">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -66,4 +72,5 @@ export default Header
                     </li>
                 </ul>
             </nav>
-        </header> */}
+        </header> */
+}

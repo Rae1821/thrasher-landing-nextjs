@@ -16,3 +16,30 @@ export const boardMembers = [
     title: "Secretary",
   },
 ];
+
+export const navLinks = [
+  {
+    label: "Home",
+    route: "/",
+  },
+  {
+    label: "About",
+    route: "/#about",
+  },
+  {
+    label: "Documents",
+    route: "/#documents",
+  },
+  {
+    label: "Events",
+    route: "/#events",
+  },
+  {
+    label: "Newsletter",
+    route: "/#newsletter",
+  },
+  {
+    label: "My Account",
+    route: "/my-account",
+  },
+];
