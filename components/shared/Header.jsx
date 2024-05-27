@@ -8,7 +8,7 @@ import Link from "next/link";
 const Header = () => {
   return (
     <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2">
-      <div className="flex items-end">
+      <Link href="/" className="flex items-end">
         <div>
           <Image src="/icons/logo.svg" alt="logo" width={30} height={30} />
         </div>
@@ -17,21 +17,41 @@ const Header = () => {
             Thrasher <span className="-mt-1 block font-semibold">Landing</span>
           </p>
         </div>
-      </div>
-      <SignedIn>
+      </Link>
+
+      {/* <SignedIn>
         <div className="hidden md:flex">
           <Navbar />
         </div>
-      </SignedIn>
-      <SignedIn>
-        <UserButton afterSignOutUrl="/" />
+      </SignedIn> */}
+      <div className="hidden md:flex md:items-center md:justify-between md:gap-4">
+        <Navbar />
+        <div className="md:justify-end">
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
+          <SignedOut>
+            <Button asChild className="rounded-full" size="lg">
+              <Link href="/sign-in">Login</Link>
+            </Button>
+          </SignedOut>
+        </div>
+      </div>
+
+      <div className="flex items-center justify-end gap-4 md:hidden">
+        <div>
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
+          <SignedOut>
+            <Button asChild className="rounded-full">
+              <Link href="/sign-in">Login</Link>
+            </Button>
+          </SignedOut>
+        </div>
+
         <MobileNav />
-      </SignedIn>
-      <SignedOut>
-        <Button asChild className="rounded-full" size="lg">
-          <Link href="/sign-in">Login</Link>
-        </Button>
-      </SignedOut>
+      </div>
     </header>
   );
 };

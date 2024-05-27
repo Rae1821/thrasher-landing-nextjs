@@ -13,14 +13,12 @@ import {
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import HOADocuments from "./HOADocuments";
 import Link from "next/link";
+import { hoaDocuments } from "@/constants";
 
 const DocumentsPage = () => {
   return (
@@ -37,132 +35,57 @@ const DocumentsPage = () => {
           </p>
         </div>
         {/* bg-[#A67A44]/20 */}
-        <div className="relative h-[900px] overflow-hidden ">
-          <div className="absolute bottom-0 top-[53%] block h-[800px] w-full translate-x-0 skew-y-[-30deg] overflow-hidden bg-emerald-700"></div>
-          <div className="absolute bottom-0 top-[53%] block h-[800px] w-full translate-x-0 skew-y-[30deg] overflow-hidden bg-emerald-700"></div>
+        <div className="relative min-h-screen overflow-hidden pb-12">
+          <div className="absolute inset-x-0 bottom-0 top-[30%] block w-full translate-x-0 skew-y-[-30deg] overflow-hidden bg-[#2D4659] md:top-1/2"></div>
+          <div className="absolute inset-x-0 bottom-0 top-[30%] block w-full translate-x-0 skew-y-[30deg] overflow-hidden bg-[#2D4659] md:top-1/2"></div>
+          <div className="absolute inset-x-0 bottom-0 top-[30%] block w-full translate-x-0 overflow-hidden bg-[#2D4659] md:top-[35%]"></div>
           <div className="relative">
             {/* main documents section */}
-            <div className="flex flex-col items-center justify-center gap-8 py-24">
-              <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
-                {/* covenant */}
-                <div className="relative h-64 w-[350px] overflow-hidden rounded-xl border bg-white px-4 py-8 text-center shadow-lg md:w-72">
+            <div className="relative flex flex-col items-center justify-center gap-8 py-24 md:flex-row">
+              {/* covenant */}
+              {hoaDocuments.map((document) => (
+                <div
+                  key={document.id}
+                  className="relative h-[300px] w-[350px] overflow-hidden rounded-xl border bg-white px-4 pb-12 pt-8 text-center shadow-lg md:w-72"
+                >
                   <div className="mb-4 inline-flex size-16 shrink-0 items-center justify-center rounded-full bg-gray-100 sm:mb-0 sm:mr-6">
                     <Image
-                      src="/icons/document.svg"
+                      src={document.icon}
                       alt="document"
                       height={32}
                       width={32}
-                      className=""
                     />
                   </div>
-                  <div className="relative">
+                  <div className="flex flex-col items-center justify-center">
                     <h3 className="mt-2 font-bold uppercase tracking-wider">
-                      The Covenant
+                      {document.title}
                     </h3>
                     <p className="mb-6 mt-2 w-64 text-sm">
-                      Rules & regulations for Thrasher Landing
+                      {document.description}
                     </p>
-                    <Link
-                      href="/"
-                      className="mt-3 inline-flex items-center text-emerald-700"
-                    >
-                      View Document
-                      <svg
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        class="ml-2 size-4"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                      </svg>
-                    </Link>
+                    <Button asChild className="bg-emerald-600">
+                      <Link href="/" className="mt-3 inline-flex items-center">
+                        View Document
+                        <svg
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          class="ml-2 size-4"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                      </Link>
+                    </Button>
                   </div>
                 </div>
-                {/* covenant amendment */}
-                <div className="h-64 w-72 rounded-xl border bg-white px-4 py-8 text-center shadow-lg">
-                  <div className="mb-4 inline-flex size-16 shrink-0 items-center justify-center rounded-full bg-gray-100 sm:mb-0 sm:mr-6">
-                    <Image
-                      src="/icons/document.svg"
-                      alt="document"
-                      height={32}
-                      width={32}
-                      className=""
-                    />
-                  </div>
-
-                  <h3 className="mt-2 text-sm font-bold uppercase tracking-wider">
-                    The Covenant Amendment
-                  </h3>
-                  <p className="mb-6 mt-2 w-64 text-center text-sm">
-                    Rules & regulations for Thrasher Landing
-                  </p>
-                  <Link
-                    href="/"
-                    className="mt-3 inline-flex items-center text-emerald-700"
-                  >
-                    View Document
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      class="ml-2 size-4"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </Link>
-                </div>
-                {/* bi-laws */}
-                <div className="flex h-56 w-[350px] items-center justify-between rounded-xl border bg-white px-4 py-8 shadow-lg">
-                  <div className="mb-4 inline-flex size-16 shrink-0 items-center justify-center rounded-full bg-gray-100 sm:mb-0 sm:mr-6">
-                    <Image
-                      src="/icons/document.svg"
-                      alt="document"
-                      height={32}
-                      width={32}
-                      className=""
-                    />
-                  </div>
-                  <div className="ml-2 md:ml-0">
-                    <h3 className="mb-3 text-left text-lg font-semibold tracking-wider">
-                      The Bi-Laws
-                    </h3>
-                    <p className="mb-6 w-64 text-left text-sm text-gray-600">
-                      Rules & regulations for Thrasher Landing
-                    </p>
-                    <Link
-                      href="/"
-                      className="mt-3 inline-flex items-center text-emerald-700"
-                    >
-                      View Document
-                      <svg
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        class="ml-2 size-4"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                      </svg>
-                    </Link>
-                  </div>
-
-                  {/* <button className="border-2 border-black  bg-white px-8 py-0.5 text-xs uppercase text-neutral-700 shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] transition duration-200 dark:border-white dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] ">
-                    View Document
-                  </button> */}
-                </div>
-              </div>
+              ))}
             </div>
 
-            <div className="relative min-h-screen px-4">
-              <div className="mt-24 ">
+            <div className="mx-auto w-full px-4 pt-4 md:w-1/2">
+              <div className=" ">
                 <Card>
                   <CardHeader className="px-7">
                     <CardTitle>HOA Meetings</CardTitle>

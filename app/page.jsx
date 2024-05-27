@@ -1,3 +1,4 @@
+import About from "@/components/shared/About";
 import DocumentSection from "@/components/shared/DocumentSection";
 import Events from "@/components/shared/Events";
 import Footer from "@/components/shared/Footer";
@@ -10,6 +11,7 @@ const page = () => {
     <div>
       <Header />
       <Hero />
+      <About id="about" />
       <Events id="events" />
       <DocumentSection id="documents" />
       <Members id="about" />

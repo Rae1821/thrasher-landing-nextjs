@@ -23,23 +23,43 @@ export const navLinks = [
     route: "/",
   },
   {
+    label: "Events",
+    route: "/#events",
+  },
+  {
     label: "About",
     route: "/#about",
   },
   {
     label: "Documents",
-    route: "/#documents",
+    route: "/documents",
   },
   {
-    label: "Events",
-    route: "/#events",
+    label: "HOA Account",
+    route: "/hoa-account",
+  },
+];
+
+export const hoaDocuments = [
+  {
+    id: 1,
+    title: "The Covenant",
+    description: "Rules & regulations for Thrasher Landing subdivision",
+    link: "/",
+    icon: "/icons/document.svg",
   },
   {
-    label: "Newsletter",
-    route: "/#newsletter",
+    id: 2,
+    title: "The Covenant Amendment",
+    description: "Amendment to original covenant agreement",
+    link: "/",
+    icon: "/icons/document.svg",
   },
   {
-    label: "My Account",
-    route: "/my-account",
+    id: 3,
+    title: "The Bi-Laws",
+    description: "Rules & regulations for Thrasher Landing",
+    link: "/",
+    icon: "/icons/document.svg",
   },
 ];

@@ -147,37 +147,13 @@
   }
 }
 
-.shapedividers_com-2329 {
-  @apply hidden relative;
+/* green - #819F7F */
+/* blue - #2D4659 */
+
+.primary-green {
+  color: #819f7f;
 }
 
-/* .shapedividers_com-2329 {
-  overflow: hidden;
-  position: relative;
-} */
-
-/* .shapedividers_com-2329::before {
-  @apply absolute z-[3] pointer-events-none bg-no-repeat -bottom-[0.1vw] -left-[0.1vw] -right-[0.1vw] -top-[0.1vw] bg-[length:100%_128px] bg-[center_bottom] bg-[url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1134.63 158.42"><g fill="%23a67a44"><path d="M0 0h1134.63L565.17 111.32Z"/><path d="M0 0v51.38l565.17 107.04 569.46-115.6V0Z" opacity=".66"/></g></svg>'];
-} */
-
-.shapedividers_com-2329-before {
-  content: "";
-  font-family: "shape divider from ShapeDividers.com";
-  position: absolute;
-  z-index: 3;
-  pointer-events: none;
-  background-repeat: no-repeat;
-  bottom: -0.1vw;
-  left: -0.1vw;
-  right: -0.1vw;
-  top: -0.1vw;
-  background-size: 100% 128px;
-  background-position: 50% 0%;
-  background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1134.63 158.42"><g fill="%23a67a44"><path d="M0 0h1134.63L565.17 111.32Z"/><path d="M0 0v51.38l565.17 107.04 569.46-115.6V0Z" opacity=".66"/></g></svg>');
-}
-
-@media (min-width: 2100px) {
-  .shapedividers_com-2329::before {
-    background-size: 100% calc(2vw + 128px);
-  }
+.primary-blue {
+  color: #2d4659;
 }
