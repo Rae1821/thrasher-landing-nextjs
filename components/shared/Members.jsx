@@ -18,8 +18,8 @@ const Members = () => {
         </div>
 
         <div className="-m-4 flex flex-wrap justify-center">
-          {boardMembers.map((member) => (
-            <div key={member} className="p-4 md:w-1/2 xl:w-1/4">
+          {boardMembers.map((member, index) => (
+            <div key={index} className="p-4 md:w-1/2 xl:w-1/4">
               <div className="rounded-lg bg-gray-100 p-6">
                 <Image
                   src="https://dummyimage.com/720x400"
