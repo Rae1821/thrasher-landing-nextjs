@@ -3,10 +3,10 @@ import Header from "@/components/shared/Header";
 
 const page = () => {
   return (
-    <div>
+    <section className="container">
       <Header />
       <HOAAccount />
-    </div>
+    </section>
   );
 };
 

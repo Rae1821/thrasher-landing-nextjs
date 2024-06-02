@@ -1,8 +1,7 @@
 import { Webhook } from "svix";
 import { headers } from "next/headers";
-import { WebhookEvent } from "@clerk/nextjs/server";
-import Stripe from "stripe";
-import { buffer } from "micro";
+import { createUser, updateUser, deleteUser } from "@lib/index";
+import { clerkClient } from "@clerk/nextjs";
 
 export async function POST(req) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the endpoint
@@ -55,103 +54,56 @@ export async function POST(req) {
   const { id } = evt.data;
   const eventType = evt.type;
 
-  // if (eventType === "user.created") {
-  //   const { email_addresses, image_url, first_name, last_name, username } =
-  //     evt.data;
+  if (eventType === "user.created") {
+    const { email_addresses, image_url, first_name, last_name, username } =
+      evt.data;
 
-  //   const user = {
-  //     clerkId: id,
-  //     email: email_addresses[0].email_address,
-  //     username: username,
-  //     firstName: first_name,
-  //     lastName: last_name,
-  //     photo: image_url,
-  //   };
+    const user = {
+      clerkId: id,
+      email: email_addresses[0].email_address,
+      username: username,
+      firstName: first_name,
+      lastName: last_name,
+      photo: image_url,
+    };
 
-  //   const newUser = await createUser(user);
+    const newUser = await createUser(user);
 
-  //   if (newUser) {
-  //     await clerkClient.users.updateUserMetadata(id, {
-  //       publicMetadata: {
-  //         userId: newUser._id,
-  //       },
-  //     });
-  //   }
+    if (newUser) {
+      await clerkClient.users.updateUserMetadata(id, {
+        publicMetadata: {
+          userId: newUser._id,
+        },
+      });
+    }
 
-  //   return NextResponse.json({ message: "OK", user: newUser });
-  // }
+    return NextResponse.json({ message: "OK", user: newUser });
+  }
 
-  // if (eventType === "user.updated") {
-  //   const { id, image_url, first_name, last_name, username } = evt.data;
+  if (eventType === "user.updated") {
+    const { id, image_url, first_name, last_name, username } = evt.data;
 
-  //   const user = {
-  //     firstName: first_name,
-  //     lastName: last_name,
-  //     username: username,
-  //     photo: image_url,
-  //   };
+    const user = {
+      firstName: first_name,
+      lastName: last_name,
+      username: username,
+      photo: image_url,
+    };
 
-  //   const updateUser = await updateUser(id, user);
+    const updateUser = await updateUser(id, user);
 
-  //   return NextResponse.json({ message: "OK", user: updateUser });
-  // }
+    return NextResponse.json({ message: "OK", user: updateUser });
+  }
 
-  // if (eventType === "user.deleted") {
-  //   const { id } = evt.data;
+  if (eventType === "user.deleted") {
+    const { id } = evt.data;
 
-  //   const deleteUser = await deleteUser(id);
+    const deleteUser = await deleteUser(id);
 
-  //   return NextResponse.json({ message: "OK", user: deleteUser });
-  // }
+    return NextResponse.json({ message: "OK", user: deleteUser });
+  }
   console.log(`Webhook with and ID of ${id} and type of ${eventType}`);
   console.log("Webhook body:", body);
 
   return new Response("", { status: 200 });
 }
-
-// Stripe Webhook
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: "2020-08-27",
-});
-
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
-
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-
-async function handleWebhookEvent(req, res) {
-  const sig = req.headers["stripe-signature"];
-  const buf = await buffer(req);
-
-  let event;
-
-  try {
-    event = stripe.webhooks.constructEvent(buf.toString(), sig, webhookSecret);
-  } catch (err) {
-    console.error(`Webhook signature verification failed: ${err.message}`);
-    return res
-      .status(400)
-      .send(`Webhook signature verification failed: ${err.message}`);
-  }
-
-  switch (event.type) {
-    case "checkout.session.completed":
-      const session = event.data.object;
-      console.log(`Payment successful for session ID: ${session.id}`);
-      // Handle post-payment actions here
-      break;
-
-    // Add other event types to handle as needed
-
-    default:
-      console.warn(`Unhandled event type: ${event.type}`);
-  }
-
-  res.status(200).end();
-}
-
-export default handleWebhookEvent;

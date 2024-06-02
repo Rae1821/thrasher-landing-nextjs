@@ -4,6 +4,7 @@ import { useUser } from "@clerk/nextjs";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import CheckoutButton from "./CheckoutButton";
+import { loadStripe } from "@stripe/stripe-js";
 
 import {
   Table,
@@ -22,10 +23,22 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "../ui/button";
+import { useState, useEffect } from "react";
 
 const HOAAccount = () => {
+  const priceId = "price_1PM8xmKINKVDMdIs6pB9gESh";
   const { isLoaded, isSignedIn, user } = useUser();
+  const [prices, setPrices] = useState([]);
+
+  const fetchProducts = async () => {
+    const data = await fetch("/api/products");
+    const products = await data.json();
+    setPrices(products);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   // In case user signs out while on the page
   if (!isLoaded || !isSignedIn) {
@@ -72,12 +85,19 @@ const HOAAccount = () => {
             <CardTitle>Current HOA Payment Due for {year}</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>$150.00</p>
+            {" "}
+            {prices.map((price) => (
+              <p key={priceId}>
+                {" "}
+                {(price.unit_amount / 100).toLocaleString("en-US", {
+                  style: "currency",
+                  currency: "USD",
+                })}
+              </p>
+            ))}
           </CardContent>
           <CardFooter>
-            <form action="/create-checkout-session" method="POST">
-              <CheckoutButton />
-            </form>
+            <CheckoutButton priceId={priceId} />
           </CardFooter>
         </Card>
 

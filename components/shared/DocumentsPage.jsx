@@ -1,6 +1,5 @@
 import Image from "next/image";
 // import { Separator } from "../ui/separator";
-import Header from "./Header";
 import { Button } from "../ui/button";
 import {
   Card,
@@ -23,7 +22,6 @@ import { hoaDocuments } from "@/constants";
 const DocumentsPage = () => {
   return (
     <div>
-      <Header />
       {/* hero section */}
       <main className="min-h-screen w-full">
         <div className="z-0 flex h-[200px] flex-col items-center justify-center bg-stone-800 bg-[url('/images/unsplash-bg.jpg')] bg-cover bg-center bg-blend-overlay">

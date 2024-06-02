@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2">
+    <header className="mx-auto flex max-w-[1440px] items-center justify-between px-4 py-2">
       <Link href="/" className="flex items-end">
         <div>
           <Image src="/icons/logo.svg" alt="logo" width={30} height={30} />
@@ -24,7 +24,7 @@ const Header = () => {
           <Navbar />
         </div>
       </SignedIn> */}
-      <div className="hidden md:flex md:items-center md:justify-between md:gap-4">
+      <div className="hidden md:flex md:items-center md:justify-end md:gap-4">
         <Navbar />
         <div className="md:justify-end">
           <SignedIn>

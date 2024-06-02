@@ -1,15 +1,13 @@
 import DocumentsPage from "@/components/shared/DocumentsPage";
-
+import Header from "@/components/shared/Header";
 
 const page = () => {
-
-
-
   return (
     <div>
-        <DocumentsPage />
+      <Header />
+      <DocumentsPage />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
