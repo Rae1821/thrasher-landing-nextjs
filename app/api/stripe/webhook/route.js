@@ -8,7 +8,7 @@
 
 // const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
-// export async function handleWebHook(req, res) {
+// export const handleWebHook = async (req, res) => {
 //   const buf = await buffer(req);
 //   const sig = req.headers["stripe-signature"];
 
