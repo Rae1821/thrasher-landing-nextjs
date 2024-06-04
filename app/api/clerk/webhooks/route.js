@@ -49,14 +49,19 @@ export async function POST(req) {
     });
   }
 
-  // Do something with the payload
-  // For this guide, you simply log the payload to the console
   const { id } = evt.data;
   const eventType = evt.type;
 
+  // Create user
   if (eventType === "user.created") {
-    const { email_addresses, image_url, first_name, last_name, username } =
-      evt.data;
+    const {
+      email_addresses,
+      image_url,
+      first_name,
+      last_name,
+      username,
+      paidStatus,
+    } = evt.data;
 
     const user = {
       clerkId: id,
@@ -65,6 +70,7 @@ export async function POST(req) {
       firstName: first_name,
       lastName: last_name,
       photo: image_url,
+      paidStatus: paidStatus,
     };
 
     const newUser = await createUser(user);
@@ -77,11 +83,15 @@ export async function POST(req) {
       });
     }
 
+    newUser.save();
+
     return NextResponse.json({ message: "OK", user: newUser });
   }
 
+  // Update user
   if (eventType === "user.updated") {
-    const { id, image_url, first_name, last_name, username } = evt.data;
+    const { id, image_url, first_name, last_name, username, paidStatus } =
+      evt.data;
 
     const user = {
       firstName: first_name,
@@ -95,6 +105,7 @@ export async function POST(req) {
     return NextResponse.json({ message: "OK", user: updateUser });
   }
 
+  // Delete a user
   if (eventType === "user.deleted") {
     const { id } = evt.data;
 
@@ -102,8 +113,8 @@ export async function POST(req) {
 
     return NextResponse.json({ message: "OK", user: deleteUser });
   }
-  console.log(`Webhook with and ID of ${id} and type of ${eventType}`);
-  console.log("Webhook body:", body);
+  // console.log(`Webhook with and ID of ${id} and type of ${eventType}`);
+  // console.log("Webhook body:", body);
 
   return new Response("", { status: 200 });
 }

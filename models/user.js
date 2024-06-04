@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import { Schema, model, models } from "mongoose";
 
 const UserSchema = new Schema({
@@ -18,10 +19,16 @@ const UserSchema = new Schema({
       "Username invalid, it should contain 8-20 alphanumeric letters and be unique!",
     ],
   },
-  image: {
+  firstName: {
     type: String,
   },
-  hasPaid: {
+  lastName: {
+    type: String,
+  },
+  photo: {
+    type: String,
+  },
+  paidStatus: {
     type: Boolean,
   },
 });
